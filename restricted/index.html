@@ -3,56 +3,102 @@
 
 <head>
 
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Restricted Access</title>
+    <title>Restricted Access | Lizzie Black</title>
 
-<link rel="stylesheet" href="restricted.css">
+    <link rel="stylesheet" href="restricted.css">
 
-<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Cormorant+Garamond:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Cormorant+Garamond:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
 
 </head>
 
 <body>
 
-<div class="background-noise"></div>
+    <div class="background-noise"></div>
 
-<div class="login-container">
+    <div class="login-container">
 
-<p class="warning">
-RESTRICTED ARCHIVE
-</p>
+        <p class="warning">
+            RESTRICTED ARCHIVE
+        </p>
 
-<h1>AUTHORIZATION REQUIRED</h1>
+        <h1>AUTHORIZATION REQUIRED</h1>
 
-<p class="description">
-Este arquivo não está listado em nenhuma área pública do site.
-</p>
+        <p class="description">
+            Este arquivo não está listado em nenhuma área pública do site.<br>
+            Apenas investigadores autorizados podem acessar os documentos arquivados.
+        </p>
 
-<form id="loginForm">
+        <form id="loginForm">
 
-<input
-type="email"
-id="email"
-placeholder="Email">
+            <input type="email" id="email" value="lizzie_secret@lizzieblack.com" readonly>
 
-<input
-type="password"
-id="password"
-placeholder="Senha">
+            <input type="password" id="password" placeholder="Senha" autocomplete="off" required>
 
-<button type="submit">
-Acessar Arquivos
-</button>
+            <button type="submit">
+                Acessar Arquivos
+            </button>
 
-</form>
+        </form>
 
-<p id="error-message"></p>
+        <div class="case-note">
+
+            <h3>Trecho Recuperado do Caso nº 7734</h3>
+
+            <p>
+                "Quando enterraram o último corpo, todos acreditaram que a história havia terminado.
+                Não perceberam que eu havia deixado minha assinatura muito antes, logo no início.
+                A única lembrança que levei comigo foi uma letra.
+                Ela caminhou vinte e um passos durante a madrugada e, desde então,
+                ninguém mais conseguiu encontrá-la."
+            </p>
+
+        </div>
+
+        <div class="help-box">
+
+            <button id="helpBtn" type="button">
+                Desistiu da investigação?
+            </button>
+
+            <div id="helpContent" class="hidden">
+
+                <h3>CASE ASSISTANCE</h3>
+
+                <p id="hintText">
+                    Até os melhores investigadores pedem ajuda... às vezes tarde demais.
+                </p>
+
+            </div>
+
+        </div>
+
+        <p id="error-message"></p>
+
+    </div>
+<div id="popup" class="popup hidden">
+
+    <div class="popup-box">
+
+        <h2>ACESSO RECUSADO</h2>
+
+        <p>
+            Suas credenciais não puderam ser verificadas.
+        </p>
+
+        <button id="closePopup">
+            Close
+        </button>
+
+    </div>
+    <script src="restricted.js"></script>
+    
 
 </div>
-
-<script src="restricted.js"></script>
 
 </body>
 
