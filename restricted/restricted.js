@@ -120,3 +120,86 @@ helpBtn.addEventListener("click", function () {
     }
 
 });
+// ===========================
+// MOSTRAR / OCULTAR SENHA
+// ===========================
+
+const passwordInput = document.getElementById("password");
+const togglePassword = document.getElementById("togglePassword");
+
+togglePassword.addEventListener("click", function () {
+
+    if (passwordInput.type === "password") {
+
+        passwordInput.type = "text";
+        togglePassword.textContent = "☾";
+        togglePassword.setAttribute("aria-label", "Ocultar senha");
+
+    } else {
+
+        passwordInput.type = "password";
+        togglePassword.textContent = "☀︎";
+        togglePassword.setAttribute("aria-label", "Mostrar senha");
+
+    }
+
+});
+// =========================
+// MODAL CARTA
+// =========================
+
+const openLetter = document.getElementById("openLetter");
+const letterModal = document.getElementById("letterModal");
+const closeLetter = document.getElementById("closeLetter");
+
+// abrir
+openLetter.addEventListener("click", () => {
+    letterModal.classList.remove("hidden");
+});
+
+// fechar
+closeLetter.addEventListener("click", () => {
+    letterModal.classList.add("hidden");
+});
+
+// fechar clicando fora
+letterModal.addEventListener("click", (e) => {
+    if (e.target === letterModal) {
+        letterModal.classList.add("hidden");
+    }
+});
+
+
+// =========================
+// CIFRA DE CÉSAR DECODER
+// =========================
+
+const input = document.getElementById("cipherInput");
+const shift = document.getElementById("shiftInput");
+const output = document.getElementById("cipherOutput");
+
+function caesar(str, shiftValue) {
+
+    const s = ((shiftValue % 26) + 26) % 26;
+
+    return str.replace(/[a-z]/gi, (c) => {
+
+        const base = c >= "a" ? 97 : 65;
+
+        return String.fromCharCode(
+            ((c.charCodeAt(0) - base + s) % 26) + base
+        );
+
+    });
+}
+
+function update() {
+
+    const text = input.value;
+    const shiftValue = parseInt(shift.value || 0);
+
+    output.textContent = caesar(text, shiftValue);
+}
+
+input.addEventListener("input", update);
+shift.addEventListener("input", update);

@@ -37,7 +37,15 @@
 
             <input type="email" id="email" value="lizzie_secret@lizzieblack.com" readonly>
 
-            <input type="password" id="password" placeholder="Senha" autocomplete="off" required>
+            <div class="password-container">
+
+                <input type="password" id="password" placeholder="Senha" autocomplete="off" required>
+
+                <button type="button" id="togglePassword" class="toggle-password" aria-label="Mostrar senha">
+                    ☀︎
+                </button>
+
+            </div>
 
             <button type="submit">
                 Acessar Arquivos
@@ -45,17 +53,74 @@
 
         </form>
 
-        <div class="case-note">
+        <button id="openLetter" class="letter-btn">
+            Trecho da investigação recuperado
+        </button>
 
-            <h3>Trecho Recuperado do Caso nº 7734</h3>
+        <div id="letterModal" class="modal hidden">
 
-            <p>
-                "Quando enterraram o último corpo, todos acreditaram que a história havia terminado.
-                Não perceberam que eu havia deixado minha assinatura muito antes, logo no início.
-                A única lembrança que levei comigo foi uma letra.
-                Ela caminhou vinte e um passos durante a madrugada e, desde então,
-                ninguém mais conseguiu encontrá-la."
-            </p>
+            <div class="modal-content">
+
+                <!-- CARTA -->
+                <div class="letter">
+
+                    <h2>SECRET LETTERS</h2>
+
+                    <p>
+                        "Quando enterraram o último corpo, encerraram o caso cedo demais. Acreditaram que haviam
+                        encontrado todas as respostas quando, na verdade, ignoraram a única evidência que realmente
+                        importava. Minha assinatura nunca esteve no final da história. Ela foi deixada logo no início, à
+                        vista de todos, esperando apenas alguém capaz de realmente observá-la.
+                        <br><br>
+
+                        Espalhei fragmentos por cada cena do crime. Era o meu modus operandi. Não eram manchas de
+                        sangue, impressões digitais ou objetos esquecidos. Eram letras. Letras discretas, pequenas o
+                        suficiente para passarem despercebidas, mas pacientes o bastante para esperar que alguém as
+                        encontrasse. Escondi uma em cada arquivo, logo abaixo do título de cada livro. Investigadores
+                        inexperientes costumam reuni-las exatamente na ordem em que as encontram. Esse é o primeiro
+                        erro. A verdade nunca se preocupa em seguir a ordem que esperam dela.
+                        <br><br>
+
+                        Toda investigação precisa de suspeitos, e eu sabia exatamente qual deles vocês escolheriam. O
+                        verdadeiro culpado nunca permanece no centro da sala; ele observa de longe enquanto todos
+                        discutem quem merece ser algemado primeiro. Entre todas as letras existe uma que não pertence à
+                        mensagem. Ela veste o rosto de outra, ocupa um lugar que nunca foi seu e espera,
+                        silenciosamente, que ninguém questione sua presença. O terceiro suspeito decidiu brincar um
+                        pouco mais. Vestiu um disfarce, caminhou vinte e um passos para longe da cena do crime e,
+                        somente quando teve certeza de que ninguém o seguia, retirou a máscara.
+                        <br><br>
+
+                        Talvez, quando fizer tudo que precisa, finalmente compreenda que nunca esteve procurando por uma mensagem.
+                        Sempre esteve procurando por mim. Mas não se preocupe. Eu estarei esperando. Só lembre. Ninguém nunca me viu."
+                    </p>
+
+                </div>
+
+                <!-- DECODER -->
+                <div class="decoder">
+
+                    <h3>CRIPTOGRAFIA</h3>
+
+                    <input id="cipherInput" placeholder="Texto original">
+
+                    <input id="shiftInput" placeholder="Deslocamento">
+
+                    <div class="output" id="cipherOutput"></div>
+
+                </div>
+
+                <!-- ANOTAÇÕES -->
+                <div class="notes">
+
+                    <h3>ANOTAÇÕES</h3>
+
+                    <textarea placeholder="Escreva seus pensamentos..."></textarea>
+
+                </div>
+
+                <button id="closeLetter">FECHAR</button>
+
+            </div>
 
         </div>
 
@@ -80,25 +145,25 @@
         <p id="error-message"></p>
 
     </div>
-<div id="popup" class="popup hidden">
+    <div id="popup" class="popup hidden">
 
-    <div class="popup-box">
+        <div class="popup-box">
 
-        <h2>ACESSO RECUSADO</h2>
+            <h2>ACESSO RECUSADO</h2>
 
-        <p>
-            Suas credenciais não puderam ser verificadas.
-        </p>
+            <p>
+                Suas credenciais não puderam ser verificadas.
+            </p>
 
-        <button id="closePopup">
-            Close
-        </button>
+            <button id="closePopup">
+                Close
+            </button>
+
+        </div>
+        <script src="restricted.js"></script>
+
 
     </div>
-    <script src="restricted.js"></script>
-    
-
-</div>
 
 </body>
 

@@ -144,7 +144,7 @@ h2 {
     align-items: center;
 }
 
-.book-cover {
+/* .book-cover {
 
     width: 250px;
     height: 380px;
@@ -155,6 +155,18 @@ h2 {
             #42000d);
 
     border: 1px solid #333;
+} */
+ .book-cover {
+    width: 250px;
+    height: 380px;
+    border: 1px solid #333;
+    overflow: hidden;
+}
+
+.book-cover img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 .book-info {
@@ -240,16 +252,19 @@ footer {
 .letter-paper {
 
     background:
-        linear-gradient(rgba(11, 3, 41, 0.96),
-            rgba(94, 11, 133, 0.96));
+        /* linear-gradient(rgba(11, 3, 41, 0.96),
+            rgba(94, 11, 133, 0.96)); */
+            #42050e;
+            
 
     color: #ffffff;
+    font-size: 1.1rem;
 
     padding: 40px;
 
-    border-radius: 3px;
+    border-radius: 5px;
 
-    border: 1px solid #ffffff;
+    /* border: 1px solid #ffffff; */
 
     box-shadow:
         0 0 30px rgba(0, 0, 0, .4);
@@ -258,7 +273,6 @@ footer {
 }
 
 .letter-paper p {
-
     margin-bottom: 20px;
 }
 
@@ -1029,4 +1043,46 @@ flex-direction:column;
 width:100%;
 }
 
+}
+.cover {
+    width: 100%;
+    height: 607px;
+    background-size: cover;
+    background-position: center;
+    border-radius: 10px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+}
+.cover.quiet1 {
+    background-image: url("images/tqm1.png");
+}
+
+.cover.quiet2 {
+    background-image: url("images/tqm2.png");
+}
+
+.cover.quiet3 {
+    background-image: url("images/tqm3.png");
+}
+
+.cover.silence {
+    background-image: url("images/los.png");
+}
+
+.cover.dahlia {
+    background-image: url("images/db3.png");
+}
+
+.cover.mask {
+    background-image: url("images/tm.png");
+}
+
+.cover.archive {
+    background-image: url("images/tba3.png");
+}
+
+.cover.ashes {
+    background-image: url("images/goa2.png");
+}
+.secret-link {
+    text-decoration: none;
 }
