@@ -518,3 +518,37 @@ transform:translateY(0);
 
     cursor:pointer;
 }
+@media (max-width: 768px) {
+
+    .modal-content {
+        flex-direction: column;
+        max-height: 90vh;
+        overflow-y: auto;
+    }
+
+    .letter,
+    .decoder,
+    .notes {
+        flex: none;
+        width: 100%;
+        max-height: none;
+    }
+
+    .notes {
+        border-left: none;
+        border-top: 1px solid #222;
+    }
+
+    #closeLetter {
+        position: sticky;
+        bottom: 10px;
+        align-self: flex-end;
+        margin-top: 20px;
+    }
+    .letter p{
+        margin-right: 70px;
+    }
+    .letter h2{
+        margin-right: 70px;
+    }
+}
